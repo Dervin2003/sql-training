@@ -54,3 +54,4 @@ ALTER TABLE employees ADD joining DATE;
 
 UPDATE employees SET joining='2025-07-02' WHERE name='Dervin';
 
+SELECT DISTINCT role FROM employees;
