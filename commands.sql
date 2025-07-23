@@ -55,3 +55,9 @@ ALTER TABLE employees ADD joining DATE;
 UPDATE employees SET joining='2025-07-02' WHERE name='Dervin';
 
 SELECT DISTINCT role FROM employees;
+
+SELECT role,COUNT(*) AS total from employees GROUP BY role;
+
+SELECT 5<>10
+
+SELECT 'true'=true
