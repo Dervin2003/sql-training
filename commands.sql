@@ -52,6 +52,10 @@ SELECT * FROM employees WHERE name ILIKE 'g%';
 
 ALTER TABLE employees ADD joining DATE;
 
+UPDATE employees SET salary=100000 WHERE role='HR';
+
+SELECT * FROM employees WHERE role='HR';
+
 UPDATE employees SET joining='2025-07-02' WHERE name='Dervin';
 
 SELECT DISTINCT role FROM employees;
@@ -61,3 +65,15 @@ SELECT role,COUNT(*) AS total from employees GROUP BY role;
 SELECT 5<>10
 
 SELECT 'true'=true
+
+SELECT * FROM employees;
+
+SELECT role,MIN(salary) AS max_salary FROM employees GROUP BY role;
+
+SELECT name,role,MAX(salary) AS max_salary FROM employees GROUP BY role,name HAVING MAX(salary)>=50000;
+
+SELECT ROUND(AVG(salary),2) AS average_salary FROM employees;
+
+SELECT AGE(NOW(),'2003-04-05') AS your_age;
+
+SELECT name,DATE_PART('year',joining)AS joining_year FROM employees;

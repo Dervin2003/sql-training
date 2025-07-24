@@ -59,3 +59,28 @@ SELECT f.title, a.name AS author_name
 FROM fantasy_books f
 JOIN authors a ON f.author_id = a.author_id;
 
+CREATE TABLE constraints_test (
+	account_no INT UNIQUE,
+	user_name VARCHAR(100) NOT NULL,
+	balance DECIMAL(10,2),
+	CHECK(balance>0),
+	account_status VARCHAR(100) DEFAULT 'Active'
+)
+
+ALTER TABLE constraints_test ADD index_no SERIAL;
+
+SELECT * FROM constraints_test;
+
+INSERT INTO constraints_test (account_no,user_name,balance)VALUES (1,'Dervin',1); 
+
+SELECT genre,COUNT(title) AS total_books FROM books GROUP BY genre;
+
+SELECT genre,COUNT(title) AS total_books FROM books GROUP BY genre HAVING COUNT(title)>1;
+
+SELECT genre,COUNT(title) AS total_books FROM books WHERE "genre"!='Romance' GROUP BY genre;
+
+SELECT genre,COUNT(title) AS total_books FROM books GROUP BY genre ORDER BY total_books desc;
+
+SELECT * FROM authors a JOIN books b ON a.author_id=b.author_id; 
+
+SELECT name,genre,COUNT(title) AS books_on_genre FROM authors a JOIN books b ON a.author_id=b.author_id GROUP BY name , genre;
