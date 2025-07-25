@@ -77,3 +77,5 @@ SELECT ROUND(AVG(salary),2) AS average_salary FROM employees;
 SELECT AGE(NOW(),'2003-04-05') AS your_age;
 
 SELECT name,DATE_PART('year',joining)AS joining_year FROM employees;
+
+SELECT * FROM employees WHERE salary BETWEEN 20000 AND 50000;

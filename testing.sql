@@ -84,3 +84,5 @@ SELECT genre,COUNT(title) AS total_books FROM books GROUP BY genre ORDER BY tota
 SELECT * FROM authors a JOIN books b ON a.author_id=b.author_id; 
 
 SELECT name,genre,COUNT(title) AS books_on_genre FROM authors a JOIN books b ON a.author_id=b.author_id GROUP BY name , genre;
+
+SELECT * FROM authors a INNER JOIN books b ON a.author_id = b.author_id;
